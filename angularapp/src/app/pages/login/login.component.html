@@ -1,0 +1,47 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5  wauto">
+                <img src="https://assets-global.website-files.com/59d46c848021530001e0117b/5fd1bf73ba01e9060de09e2d_student-management-essentials-hero.png"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="container text-center" style="font-size: 27px; margin-bottom: 20px;">
+                    <mat-icon>emoji_people</mat-icon>
+                    <button mat-button routerLink="/login" style="font-size: 27px;">Student Manager</button>
+                </div>
+                <mat-card id="loginBox">
+                    <h2 style="margin-bottom: 20px; color: rgb(73, 73, 250);" class="text-center">Sign into your account
+                    </h2>
+                    <form #loginForm="ngForm" (ngSubmit)="validate()">
+
+                        <mat-form-field class="full-w" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input id="email" required name="email" [(ngModel)]="login.email" type="email" matInput
+                                placeholder="Enter Email">
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field class="full-w" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input id="password" [type]="hide ? 'password' : 'text'" required name="password"
+                                [(ngModel)]="login.password" matInput placeholder="Enter Password">
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <div class="container text-center" style="margin-top: 20px; margin-bottom: 20px;">
+                            <button [disabled]="loginForm.invalid" id="loginButton" class="full-w" type="submit"
+                                mat-raised-button color="primary">Sign
+                                in</button>
+                        </div>
+                    </form>
+                    <div class="container text-center" style="margin-top: 20px; font-size: 17px;">
+                        <span>New User?</span>
+                        <a id="signupLink" routerLink="/signup" style="padding-left: 20px;">Sign up Here</a>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

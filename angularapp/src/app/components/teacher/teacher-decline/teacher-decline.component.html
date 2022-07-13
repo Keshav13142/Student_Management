@@ -1,0 +1,54 @@
+<h1 mat-dialog-title class="text-center">Marks Details</h1>
+<div mat-dialog-content>
+    <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col">
+                <table class="table-h">
+                    <tr *ngIf="role=='teacher'">
+                        <td class="bold">Submitted By</td>
+                        <td>{{mark.claimedBy.username}}</td>
+                    </tr>
+                    <tr *ngIf="role=='teacher'">
+                        <td class="bold">Email</td>
+                        <td>{{mark.claimedBy.email}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Entry Number</td>
+                        <td>{{mark.entryNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Mark</td>
+                        <td>{{mark.marks}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Date</td>
+                        <td>{{date}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Description</td>
+                        <td>{{mark.description}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Status</td>
+                        <td>{{mark.status}}</td>
+                    </tr>
+                </table>
+                <form #remark="ngForm" (ngSubmit)="submit()">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Remarks</mat-label>
+                        <input required name="remarks" [(ngModel)]="remarks" type="text" matInput
+                            placeholder="Enter Remarks">
+                        <mat-icon matSuffix>badge</mat-icon>
+                    </mat-form-field>
+                    <div style="display:flex; justify-content: center; margin-top: 20px;">
+                        <button [disabled]="remark.invalid" type="submit" mat-raised-button color="warn">
+                            Decline
+                        </button>
+                        <button type="button" style="margin-left: 20px;" (click)="close()" mat-raised-button
+                            color="primary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

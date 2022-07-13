@@ -1,0 +1,29 @@
+.w100 {
+  width: 100%;
+}
+.mat-date {
+  background-color: rgb(93, 72, 151);
+  color: #fff;
+}
+.inp {
+  width: 300px;
+}
+.heading {
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: rgb(131, 131, 243);
+}
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.date {
+  width: 400px;
+  margin-right: 20px;
+}
+.btn {
+  margin: 10px 0px 20px 0px;
+}

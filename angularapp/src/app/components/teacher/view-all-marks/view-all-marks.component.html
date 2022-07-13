@@ -1,0 +1,30 @@
+<mat-tab-group mat-align-tabs="center" style="height: max-content;">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon style="margin-right: 10px;">file_download_done</mat-icon>
+            All marks
+        </ng-template>
+        <div style="display: flex; justify-items:left ; margin:20px 0px 0px 20px;">
+            <h1 style="margin-left: 20px;">Student Marks</h1>
+            <button style="margin-left: 20px; margin-bottom: 10px;" (click)="refresh()" mat-icon-button>
+                <mat-icon>sync</mat-icon>
+            </button>
+        </div>
+        <mat-card>
+            <mat-card-content>
+                <mat-list *ngFor="let e of approved">
+                    <mat-list-item class="card-x">
+                        <div mat-line>Marks: {{e.marks}}</div>
+                        <div mat-line>Description :{{e.description}}</div>
+                        <div mat-line>Status:{{e.status}}</div>
+                        <mat-divider></mat-divider>
+                        <button mat-raised-button color="primary" (click)="view(e)" style="margin: 10px;">
+                            View
+                        </button>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+        <div class="info" *ngIf="approved.length==0">Nothing to See Here :)</div>
+    </mat-tab>
+</mat-tab-group>
